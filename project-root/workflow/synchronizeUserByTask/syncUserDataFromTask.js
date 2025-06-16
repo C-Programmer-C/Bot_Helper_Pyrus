@@ -6,6 +6,7 @@ import {getAccessToken} from '../auth.js';
 import { updateLastSyncedAtField } from "./updateLastSyncedAtField.js";
 import {PyrusApiClient} from 'pyrus-api';
 import { userDiffersFromTask } from "./userDiffersFromTask.js";
+import { findUserById } from "./findUserById.js";
 
 export async function syncUserDataFromTask() {
     const token = await getAccessToken();
@@ -23,7 +24,7 @@ export async function syncUserDataFromTask() {
         const userField = task.fields?.find(f => f.id === USER_FIELD_ID);
         if (isFieldEmpty(userField)) continue;
         
-        const found_user = await findUserByTask(api, task);
+        const found_user = await findUserById(token, task)
         
         if (!found_user) continue;
 
