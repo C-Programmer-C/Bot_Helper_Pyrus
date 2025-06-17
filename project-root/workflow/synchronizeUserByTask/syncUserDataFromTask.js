@@ -1,5 +1,5 @@
 import { getAvailableTasks } from "./getAvailableTasks.js";
-import {isEmptyArray, isFieldEmpty, findUserByTask} from '../taskUtils.js';
+import {isEmptyArray, isFieldEmpty} from '../taskUtils.js';
 import { parsePyrusDate } from "./parsePyrusDate.js";
 import { updateUserFromTask } from "./updateUserFromTask.js";
 import {getAccessToken} from '../auth.js';
