@@ -21,7 +21,6 @@ export async function syncUserDataFromTask() {
     }
 
     for (const task of tasks) {
-        console.log(`${task} ${task.id}`)
         const userField = task.fields?.find(f => f.id === USER_FIELD_ID);
         if (isFieldEmpty(userField)) continue;
         

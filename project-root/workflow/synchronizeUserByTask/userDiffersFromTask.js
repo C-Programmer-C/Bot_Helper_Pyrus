@@ -22,8 +22,7 @@ export function userDiffersFromTask(user, task) {
 
     const CONSTRACTOR_FIELD_ID_USER = 10;
     const CONSTRACTOR_FIELD_ID_TASK = 40;
-    
-   console.log(user);
+
 
     for (const [taskFieldId, userFieldId] of FIELD_PAIRS) {
         const taskField = getField(task.fields, taskFieldId);
