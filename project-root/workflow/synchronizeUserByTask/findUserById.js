@@ -20,5 +20,5 @@ export async function findUserById(token, task) {
     }
 
     const userTaskData = await response.json();
-    return userTaskData;
+    return userTaskData.task;
 }
