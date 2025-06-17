@@ -1,3 +1,13 @@
+
+
+
+function getField(fields, id) {
+    const result_field = fields.find(f => f.id === id);
+    if (!result_field || result_field === undefined)
+        console.log(`Поле ${fields} не было найдено при id: ${id}`)
+    return result_field;
+}
+
 export function userDiffersFromTask(user, task) {
     const FIELD_PAIRS = [
         [32, 5],   // full name
@@ -16,8 +26,6 @@ export function userDiffersFromTask(user, task) {
    console.log(user);
    console.log(task.fields);
    console.log(user.fields);
-    const getField = (fields, id) => fields.find(f => f.id === id);
-
 
     for (const [taskFieldId, userFieldId] of FIELD_PAIRS) {
         const taskField = getField(task.fields, taskFieldId);
